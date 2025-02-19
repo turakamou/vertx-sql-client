@@ -187,7 +187,7 @@ public class RowReader<C, R> implements Flow.Subscriber<Row>, Function<oracle.jd
 
   private static Class<?> getType(String cn) {
     try {
-      if (cn.equals("[B")) {
+      if (cn.equals(byte[].class.getName())) {
         return byte[].class;
       }
       return OraclePreparedQueryCommand.class.getClassLoader().loadClass(cn);
